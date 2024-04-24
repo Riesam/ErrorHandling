@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+
+        body {
+            background-color: beige;
+        }
+
+        .head1 {
+            margin-top: 5%;
+            font-size: 40px;
+        }
+
+        p {
+            font-weight: bolder;
+            font-size: 40px;
+        }
+        
+        .txt {
+            border: 1px solid black;
+            border-radius: 6px;
+            width: 16%;
+            height: 45px;
+            font-size: x-large;
+        }
+
+        .bttn {
+            border: 1.5px solid black;
+            border-radius: 6px;
+            font-size: 30px;
+            width: 7%;
+            height: 50px;
+        }
+
+
+    </style>
+    <title>Error Handling</title>
+</head>
+<body>
+    <h1 class="head1">
+        Numerator & Denominator (Division)
+    </h1>
+    <h3>Created by Risam</h6>
+    
+    <br>
+
+    <p>Numerator</p>
+    <input type="text" id="num1" class="txt"><br><br>
+    <p>Denominator</p>
+    <input type="text" id="num2" class="txt"><br><br>
+    <input type="button" value="Submit" onclick="divideNumbers()" class="bttn"><br><br>
+
+    <p id="demo"></p>
+
+
+    <script>
+
+        
+        function divideNumbers(x, y) {
+
+            x = document.getElementById("num1").value;
+            y = document.getElementById("num2").value;
+
+            try {
+                if(x == "" || y == "") throw "empty";
+                if(isNaN(x, y)) throw "not a number";
+                x = Number(x);
+                y = Number(y);
+                if(x == 0 || y == 0) throw "not possible due to the input 0";
+                if(x == Number(x) && y == Number(y)) throw x/y;
+            }
+
+            catch(err) {
+                document.getElementById("demo").innerHTML = "Input is " + err;
+            }
+        }
+
+
+    </script>
+</body>
+</html>
